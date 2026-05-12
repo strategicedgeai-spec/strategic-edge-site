@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strategic Edge — AI Systems for Service Businesses</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1A1A2E;
+      background: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 {
+      line-height: 1.2;
+      color: #1A1A2E;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section--grey {
+      background: #F8F9FA;
+    }
+
+    .section--navy {
+      background: #1A1A2E;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+      text-decoration: none;
+      line-height: 1;
+      letter-spacing: 0.01em;
+    }
+
+    .btn--primary {
+      background: #5C9900;
+      color: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(92, 153, 0, 0.28);
+    }
+
+    .btn--primary:hover {
+      background: #4a7a00;
+      box-shadow: 0 4px 16px rgba(92, 153, 0, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn--secondary {
+      background: transparent;
+      color: #1A1A2E;
+      border: 2px solid #D1D5DB;
+    }
+
+    .btn--secondary:hover {
+      border-color: #1A1A2E;
+      background: transparent;
+    }
+
+    .btn--full {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ===== CARDS ===== */
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      padding: 28px;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #FFFFFF;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav__logo {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #1A1A2E;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .nav__logo span {
+      color: #5C9900;
+      letter-spacing: 2px;
+    }
+
+    .nav__cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav__hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav__hamburger svg {
+      display: block;
+    }
+
+    .nav__mobile-menu {
+      display: none;
+      padding: 16px 24px;
+      border-top: 1px solid #E5E7EB;
+    }
+
+    .nav__mobile-menu.is-open {
+      display: block;
+    }
+
+    .nav__mobile-menu .btn {
+      display: block;
+      text-align: center;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 100px 0 88px;
+      background: #FFFFFF;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .hero__content {
+      max-width: 780px;
+    }
+
+    .hero__label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #5C9900;
+      background: #f0f9e0;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+    }
+
+    .hero__h1 {
+      font-size: 58px;
+      font-weight: 700;
+      color: #1A1A2E;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin-bottom: 24px;
+    }
+
+    .hero__sub {
+      font-size: 19px;
+      color: #4B5563;
+      margin-bottom: 40px;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .hero__buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .hero__trust {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #1A1A2E;
+    }
+
+    .trust-dot {
+      width: 8px;
+      height: 8px;
+      background: #5C9900;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .hero__byline {
+      font-size: 13px;
+      color: #9CA3AF;
+      margin-top: 20px;
+    }
+
+    /* ===== PROBLEM ===== */
+    .problem__heading {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    .problem__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .problem-card {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      padding: 28px;
+    }
+
+    .problem-card__icon {
+      width: 44px;
+      height: 44px;
+      background: #f0f9e0;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: #5C9900;
+      flex-shrink: 0;
+    }
+
+    .problem-card__icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .problem-card__title {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+      color: #1A1A2E;
+      line-height: 1.3;
+    }
+
+    .problem-card__context {
+      font-size: 14px;
+      color: #6B7280;
+      line-height: 1.6;
+    }
+
+    /* ===== SOLUTION / TIERS ===== */
+    .solution__heading {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    .tiers__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .tier-card {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      padding: 32px 28px;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .tier-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .tier-card--popular {
+      border: 2px solid #5C9900;
+      background: #fafef5;
+    }
+
+    .tier-card__badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #5C9900;
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .tier-card__name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #5C9900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .tier-card__price {
+      margin-bottom: 4px;
+    }
+
+    .tier-card__setup {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1A1A2E;
+    }
+
+    .tier-card__monthly {
+      font-size: 14px;
+      color: #6B7280;
+      margin-bottom: 16px;
+    }
+
+    .tier-card__desc {
+      font-size: 14px;
+      color: #4B5563;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .tier-card__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .tier-card__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .tier-card__list li svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: #5C9900;
+    }
+
+    .tiers__note {
+      text-align: center;
+      font-size: 14px;
+      font-style: italic;
+      color: #6B7280;
+    }
+
+    /* ===== ADD-ONS ===== */
+    .addons__heading {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .addons__sub {
+      text-align: center;
+      color: #6B7280;
+      margin-bottom: 48px;
+      font-size: 15px;
+    }
+
+    .addons__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .addon-card {
+      background: #FFFFFF;
+      border: 1.5px dashed rgba(92, 153, 0, 0.4);
+      border-radius: 8px;
+      padding: 28px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .addon-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .addon-card__icon {
+      width: 40px;
+      height: 40px;
+      background: #f0f9e0;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #5C9900;
+      margin-bottom: 16px;
+    }
+    .addon-card__icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .addon-card__name {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .addon-card__desc {
+      font-size: 14px;
+      color: #6B7280;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .addon-card__price {
+      font-size: 14px;
+      font-weight: 600;
+      color: #5C9900;
+    }
+
+    .addons__footnote {
+      text-align: center;
+      font-size: 13px;
+      color: #9CA3AF;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .how__heading {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      margin-bottom: 64px;
+      text-align: center;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: calc(12.5% + 0px);
+      right: calc(12.5% + 0px);
+      height: 2px;
+      background: rgba(92, 153, 0, 0.4);
+      z-index: 0;
+    }
+
+    .step {
+      text-align: center;
+      padding: 0 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step__number {
+      width: 48px;
+      height: 48px;
+      background: #5C9900;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 0 auto 20px;
+    }
+
+    .step__title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+
+    .step__desc {
+      font-size: 14px;
+      color: #9CA3AF;
+      line-height: 1.6;
+    }
+
+    /* ===== EARLY RESULTS ===== */
+    .results__heading {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .results__sub {
+      text-align: center;
+      color: #6B7280;
+      margin-bottom: 48px;
+    }
+
+    .results__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .result-card {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      padding: 32px 28px;
+      text-align: center;
+    }
+
+    .result-card__number {
+      font-size: 52px;
+      font-weight: 700;
+      color: #5C9900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .result-card__label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1A1A2E;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .result-card__context {
+      font-size: 13px;
+      color: #9CA3AF;
+      line-height: 1.5;
+    }
+
+    .results__disclaimer {
+      text-align: center;
+      font-size: 13px;
+      color: #9CA3AF;
+    }
+
+    /* ===== DIAGNOSTIC CALCULATOR ===== */
+    .diagnostic__heading {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .diagnostic__sub {
+      text-align: center;
+      color: #6B7280;
+      margin-bottom: 48px;
+    }
+
+    .diagnostic__form {
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1A1A2E;
+      margin-bottom: 8px;
+    }
+
+    .form-group input[type="number"] {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: #1A1A2E;
+      background: #FFFFFF;
+      transition: border-color 0.15s ease;
+      -moz-appearance: textfield;
+    }
+
+    .form-group input[type="number"]::-webkit-outer-spin-button,
+    .form-group input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    .form-group input[type="number"]:focus {
+      outline: none;
+      border-color: #5C9900;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .slider-wrapper input[type="range"] {
+      flex: 1;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 4px;
+      background: #D1D5DB;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .slider-wrapper input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #5C9900;
+      cursor: pointer;
+    }
+
+    .slider-wrapper input[type="range"]::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #5C9900;
+      cursor: pointer;
+      border: none;
+    }
+
+    .slider-label {
+      font-size: 16px;
+      font-weight: 700;
+      color: #5C9900;
+      min-width: 48px;
+      text-align: right;
+    }
+
+    .calc-error {
+      display: none;
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #DC2626;
+      margin-top: 16px;
+    }
+
+    .calc-error.is-visible {
+      display: block;
+    }
+
+    /* Diagnostic Result Box */
+    .calc-result {
+      display: none;
+      margin-top: 24px;
+    }
+
+    .calc-result.is-visible {
+      display: block;
+      animation: fadeSlide 0.35s ease forwards;
+    }
+
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .calc-result__card {
+      background: #1A1A2E;
+      border-radius: 8px;
+      padding: 36px 32px;
+    }
+
+    .calc-result__monthly {
+      font-size: 52px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .calc-result__monthly span {
+      color: #7ec800;
+    }
+
+    .calc-result__annual {
+      font-size: 16px;
+      color: #9CA3AF;
+      margin-bottom: 12px;
+    }
+
+    .calc-result__roi {
+      font-size: 15px;
+      color: #9CA3AF;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    /* ===== BOOKING ===== */
+    .booking__heading {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .booking__sub {
+      text-align: center;
+      color: #6B7280;
+      margin-bottom: 48px;
+    }
+
+    .booking__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .booking__bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 16px;
+    }
+
+    .booking__bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.5;
+    }
+
+    .check-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: #5C9900;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .check-icon svg {
+      color: #FFFFFF;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #1A1A2E;
+      padding: 40px 0;
+    }
+
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .footer__brand-name {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .footer__brand-name span {
+      color: #5C9900;
+      letter-spacing: 2px;
+    }
+
+    .footer__brand-tagline {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer__email a {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .footer__email a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer__bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .footer__privacy-btn {
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    .footer__privacy-btn:hover {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ===== PRIVACY MODAL ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-overlay.is-open {
+      display: flex;
+    }
+
+    .modal {
+      background: #FFFFFF;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 40px;
+      position: relative;
+    }
+
+    .modal__close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #6B7280;
+      line-height: 1;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .modal__close:hover {
+      background: #F3F4F6;
+      color: #1A1A2E;
+    }
+
+    .modal__title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1A1A2E;
+      margin-bottom: 28px;
+      padding-right: 32px;
+    }
+
+    .modal__section {
+      margin-bottom: 20px;
+    }
+
+    .modal__section-heading {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6B7280;
+      margin-bottom: 6px;
+    }
+
+    .modal__section p {
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.6;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .section {
+        padding: 48px 0;
+      }
+
+      .hero {
+        padding: 48px 0;
+      }
+
+      .hero__h1 {
+        font-size: 36px;
+        letter-spacing: -0.02em;
+      }
+
+      .hero__sub {
+        font-size: 17px;
+      }
+
+      .problem__heading,
+      .solution__heading,
+      .addons__heading,
+      .how__heading,
+      .results__heading,
+      .diagnostic__heading,
+      .booking__heading {
+        font-size: 30px;
+      }
+
+      .hero__buttons {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero__buttons .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav__cta {
+        display: none;
+      }
+
+      .nav__hamburger {
+        display: block;
+      }
+
+      .problem__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tiers__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .addons__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .steps::before {
+        display: none;
+      }
+
+      .results__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .booking__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .how__heading {
+        margin-bottom: 40px;
+      }
+
+      .modal {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="#" class="nav__logo">STRATEGIC<span>EDGE</span></a>
+        <div class="nav__cta">
+          <a href="#booking" class="btn btn--primary">Book a Free Call</a>
+        </div>
+        <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="nav__mobile-menu" id="mobileMenu">
+        <a href="#booking" class="btn btn--primary">Book a Free Call</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__label">AI systems for UK service businesses</div>
+        <h1 class="hero__h1">Stop losing jobs to your voicemail.</h1>
+        <p class="hero__sub">We install AI systems that answer every call, follow up every lead, and book appointments for your business — 24 hours a day, without adding a single person to your payroll.</p>
+        <div class="hero__buttons">
+          <a href="#diagnostic" class="btn btn--primary">See If This Is Right For You</a>
+          <a href="#booking" class="btn btn--secondary">Book a Free Call</a>
+        </div>
+        <div class="hero__trust">
+          <div class="trust-item">
+            <span class="trust-dot"></span>
+            UK-based
+          </div>
+          <div class="trust-item">
+            <span class="trust-dot"></span>
+            No lock-in contracts
+          </div>
+          <div class="trust-item">
+            <span class="trust-dot"></span>
+            Live in 2–4 weeks
+          </div>
+        </div>
+        <p class="hero__byline">Built and run by Stefan Jones and Khalid Rashid — we install and manage every system ourselves.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROBLEM ===== -->
+  <section class="section section--grey">
+    <div class="container">
+      <h2 class="problem__heading">Sound familiar?</h2>
+      <div class="problem__grid">
+
+        <div class="problem-card">
+          <div class="problem-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40">
+              <path d="M13 7h4l2 5-2.5 2.5a18 18 0 0 0 9 9L28 21l5 2v4a2 2 0 0 1-2 2A24 24 0 0 1 7 9a2 2 0 0 1 2-2z"/>
+            </svg>
+          </div>
+          <h3 class="problem-card__title">You're on the tools. The phone rings. You can't answer.</h3>
+          <p class="problem-card__context">So it rings out. The caller moves on. That job is gone — and most of them never call back.</p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40">
+              <circle cx="20" cy="20" r="14"/>
+              <polyline points="20,10 20,20 27,25"/>
+            </svg>
+          </div>
+          <h3 class="problem-card__title">You sent the quote. Then life got in the way.</h3>
+          <p class="problem-card__context">You meant to follow up. Three days passed. They've already booked someone else. This happens in every service business — constantly.</p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-card__icon">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40">
+              <circle cx="20" cy="14" r="6"/>
+              <path d="M8 34c0-7 5.4-12 12-12s12 5 12 12"/>
+            </svg>
+          </div>
+          <h3 class="problem-card__title">You're the owner, the salesperson, and the admin team.</h3>
+          <p class="problem-card__context">Answering enquiries, chasing quotes, doing admin at 9pm. Something always gets dropped. Usually the things that cost you money.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOLUTION / TIERS ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="solution__heading">What we install</h2>
+      <div class="tiers__grid">
+
+        <!-- Tier 1 -->
+        <div class="tier-card">
+          <div class="tier-card__name">Tier 1 — AI Receptionist</div>
+          <div class="tier-card__price">
+            <span class="tier-card__setup">£1,500 setup</span>
+          </div>
+          <div class="tier-card__monthly">+ £450 / month</div>
+          <p class="tier-card__desc">AI answers every call, qualifies the lead, and books the appointment. 24/7. You never miss a call again.</p>
+          <ul class="tier-card__list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 6.5,11.5 13,5"/></svg>
+              AI voice agent
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 6.5,11.5 13,5"/></svg>
+              Missed call text-back
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 6.5,11.5 13,5"/></svg>
+              Appointment booking
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 6.5,11.5 13,5"/></svg>
+              Monthly report
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="tier-card tier-card--popular">
+          <div class="tier-card__badge">Most Popular</div>
+          <div class="tier-card__name">Tier 2 — AI Lead System</div>
+          <div class="tier-card__price">
+            <span class="tier-card__setup">£3,000 setup</span>
+          </div>
+          <div class="tier-card__monthly">+ £750 / month</div>
+          <p class="tier-card__desc">Everything in Tier 1 plus automated follow-up, review collection, and a complete front-of-house system.</p>
+          <ul class="tier-card__list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 6.5,11.5 13,5"/></svg>
+              Everything in Tier 1
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 6.5,11.5 13,5"/></svg>
+              30-day follow-up sequences
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 6.5,11.5 13,5"/></svg>
+              Review automation
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 6.5,11.5 13,5"/></svg>
+              Monthly optimisation call
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="tier-card">
+          <div class="tier-card__name">Tier 3 — AI Operations</div>
+          <div class="tier-card__price">
+            <span class="tier-card__setup">£5,000 setup</span>
+          </div>
+          <div class="tier-card__monthly">+ £1,200 / month</div>
+          <p class="tier-card__desc">Your entire operation front-of-house handled by AI — calls, leads, reviews, internal workflows.</p>
+          <ul class="tier-card__list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 6.5,11.5 13,5"/></svg>
+              Everything in Tier 2
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 6.5,11.5 13,5"/></svg>
+              Internal workflow automation
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 6.5,11.5 13,5"/></svg>
+              Custom AI agents
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 6.5,11.5 13,5"/></svg>
+              Quarterly strategy review
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="tiers__note">Every build starts with a paid diagnostic (£350) — credited against your setup fee if you proceed.</p>
+    </div>
+  </section>
+
+  <!-- ===== ADD-ONS ===== -->
+  <section class="section section--grey">
+    <div class="container">
+      <h2 class="addons__heading">Bolt-on services</h2>
+      <p class="addons__sub">Add any of these to your existing package at any time.</p>
+      <div class="addons__grid">
+
+        <div class="addon-card">
+          <div class="addon-card__icon">
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="36" height="36">
+              <polygon points="18,3 22,14 34,14 24,21 28,33 18,26 8,33 12,21 2,14 14,14"/>
+            </svg>
+          </div>
+          <h3 class="addon-card__name">Google Review Management</h3>
+          <p class="addon-card__desc">We automate your review requests, monitor your Google rating, and respond to every review using AI — so your reputation builds itself.</p>
+          <div class="addon-card__price">£200 setup + £150/month</div>
+        </div>
+
+        <div class="addon-card">
+          <div class="addon-card__icon">
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="36" height="36">
+              <path d="M5 18c0-7 5.4-13 13-13 5 0 9.5 2.8 11.8 7"/>
+              <path d="M31 10v5h-5"/>
+              <path d="M31 18c0 7-5.4 13-13 13-5 0-9.5-2.8-11.8-7"/>
+              <path d="M5 26v-5h5"/>
+            </svg>
+          </div>
+          <h3 class="addon-card__name">AI Lead Generation</h3>
+          <p class="addon-card__desc">We build automated outreach sequences that contact cold prospects by SMS and email on your behalf — bringing new enquiries in without you lifting a finger.</p>
+          <div class="addon-card__price">£500 setup + £250/month</div>
+        </div>
+
+        <div class="addon-card">
+          <div class="addon-card__icon">
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="36" height="36">
+              <path d="M8 18H4l5-9 5 9H10"/>
+              <path d="M10 18c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8"/>
+              <path d="M28 18h4l-5 9-5-9h4"/>
+              <path d="M28 18c0-4.4-3.6-8-8-8s-8 3.6-8 8"/>
+            </svg>
+          </div>
+          <h3 class="addon-card__name">Past Client Re-Engagement</h3>
+          <p class="addon-card__desc">We build an AI sequence that automatically contacts your old customers — reminding them you exist, asking for referrals, and booking repeat work.</p>
+          <div class="addon-card__price">£300 setup + £150/month</div>
+        </div>
+
+      </div>
+      <p class="addons__footnote">All add-ons require an active Strategic Edge tier package.</p>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section section--navy">
+    <div class="container">
+      <h2 class="how__heading">How it works</h2>
+      <div class="steps">
+
+        <div class="step">
+          <div class="step__number">1</div>
+          <div class="step__title">Paid Diagnostic (£350)</div>
+          <p class="step__desc">60 minutes going through your business — where leads come in, where they drop off, and exactly what to build to fix it. Credited against your setup if you proceed.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__number">2</div>
+          <div class="step__title">We Build It</div>
+          <p class="step__desc">We build and test everything in 2–4 weeks. You don't touch a thing. No technical knowledge required — we handle the entire setup.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__number">3</div>
+          <div class="step__title">You Go Live</div>
+          <p class="step__desc">Your phone gets answered every time. Leads get followed up before they go cold. Jobs get booked — while you're on the tools.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__number">4</div>
+          <div class="step__title">We Keep It Running</div>
+          <p class="step__desc">Monthly reports, ongoing optimisation, and performance monitoring. We keep the systems sharp. You get on with the work.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EARLY RESULTS ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="results__heading">Early results</h2>
+      <p class="results__sub">We're in the early stages, working alongside our first clients. This is what we're already seeing.</p>
+      <div class="results__grid">
+
+        <!-- UPDATE WITH REAL DATA -->
+        <div class="result-card">
+          <div class="result-card__number">24</div>
+          <div class="result-card__label">Missed calls recovered in month one</div>
+          <p class="result-card__context">A service business that was losing every call outside business hours.</p>
+        </div>
+
+        <!-- UPDATE WITH REAL DATA -->
+        <div class="result-card">
+          <div class="result-card__number">£3,200</div>
+          <div class="result-card__label">Estimated monthly revenue recovered</div>
+          <p class="result-card__context">Based on average job value and calls now being answered and booked.</p>
+        </div>
+
+        <!-- UPDATE WITH REAL DATA -->
+        <div class="result-card">
+          <div class="result-card__number">6 hrs</div>
+          <div class="result-card__label">Saved per week on manual follow-up</div>
+          <p class="result-card__context">Follow-up sequences now run automatically with no human involvement.</p>
+        </div>
+
+      </div>
+      <p class="results__disclaimer">Results are from early builds. Individual results will vary based on business size and lead volume.</p>
+    </div>
+  </section>
+
+  <!-- ===== DIAGNOSTIC CALCULATOR ===== -->
+  <section class="section section--grey" id="diagnostic">
+    <div class="container">
+      <h2 class="diagnostic__heading">Find out what missed calls are costing you</h2>
+      <p class="diagnostic__sub">Three questions. Thirty seconds. See exactly how much you're leaving on the table every month.</p>
+
+      <div class="diagnostic__form">
+        <div class="form-group">
+          <label for="callsPerMonth">How many calls do you get per month?</label>
+          <input type="number" id="callsPerMonth" placeholder="e.g. 80" min="0" />
+        </div>
+
+        <div class="form-group">
+          <label for="missRate">What percentage do you think you miss?</label>
+          <div class="slider-wrapper">
+            <input type="range" id="missRate" min="0" max="60" value="25" />
+            <span class="slider-label" id="missRateLabel">25%</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="jobValue">What is your average job value? (£)</label>
+          <input type="number" id="jobValue" placeholder="e.g. 300" min="0" />
+        </div>
+
+        <button class="btn btn--primary btn--full" id="calcBtn">Calculate</button>
+
+        <div class="calc-error" id="calcError">Please fill in all three fields.</div>
+
+        <div class="calc-result" id="calcResult">
+          <div class="calc-result__card">
+            <div class="calc-result__monthly">
+              <span id="resultMonthly"></span> lost per month
+            </div>
+            <div class="calc-result__annual" id="resultAnnual"></div>
+            <div class="calc-result__roi" id="resultROI"></div>
+            <a href="#booking" class="btn btn--primary">Book a Free Call to Fix This</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== BOOKING ===== -->
+  <section class="section" id="booking">
+    <div class="container">
+      <h2 class="booking__heading">Book your free discovery call</h2>
+      <p class="booking__sub">15 minutes. No obligation. We'll tell you honestly whether AI is the right move for your business — and if it is, exactly what we'd build.</p>
+
+      <div class="booking__grid">
+        <div>
+          <ul class="booking__bullets">
+            <li>
+              <div class="check-icon">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="2,6 5,9 10,3"/>
+                </svg>
+              </div>
+              We find out exactly where your business is losing work right now
+            </li>
+            <li>
+              <div class="check-icon">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="2,6 5,9 10,3"/>
+                </svg>
+              </div>
+              We tell you straight whether AI is the right fix — or not
+            </li>
+            <li>
+              <div class="check-icon">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="2,6 5,9 10,3"/>
+                </svg>
+              </div>
+              If it is, you'll know what we'd build and what it costs — before spending a penny
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/IGUlpdbZxpUlO603ypc6"
+            style="width:100%;height:1094px;border:none;border-radius:8px"
+            id="inline-IGUlpdbZxpUlO603ypc6"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="First intake form "
+            data-height="1094"
+            data-layout-iframe-id="inline-IGUlpdbZxpUlO603ypc6"
+            data-form-id="IGUlpdbZxpUlO603ypc6"
+            title="First intake form ">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <span class="footer__brand-name">STRATEGIC<span>EDGE</span></span>
+          <span class="footer__brand-tagline">AI systems for service businesses</span>
+        </div>
+        <div class="footer__email">
+          <a href="mailto:strategicedge.ai@gmail.com">strategicedge.ai@gmail.com</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        &copy; 2026 Strategic Edge. All rights reserved. &middot;
+        <button class="footer__privacy-btn" id="privacyBtn">Privacy Policy</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== PRIVACY MODAL ===== -->
+  <div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal" id="modalBox">
+      <button class="modal__close" id="modalClose" aria-label="Close">&times;</button>
+      <h2 class="modal__title" id="modalTitle">Strategic Edge Privacy Policy — Last updated May 2026</h2>
+
+      <div class="modal__section">
+        <div class="modal__section-heading">Who we are</div>
+        <p>Strategic Edge is a UK-based business operated by Stefan Jones and Khalid Rashid. Contact: <a href="mailto:strategicedge.ai@gmail.com" style="color:#5C9900;">strategicedge.ai@gmail.com</a></p>
+      </div>
+
+      <div class="modal__section">
+        <div class="modal__section-heading">What we collect</div>
+        <p>Your name, business name, email address, and phone number when you submit a form or book a call.</p>
+      </div>
+
+      <div class="modal__section">
+        <div class="modal__section-heading">Why we collect it</div>
+        <p>To respond to your enquiry and provide the services you have requested.</p>
+      </div>
+
+      <div class="modal__section">
+        <div class="modal__section-heading">Lawful basis</div>
+        <p>Consent. You can withdraw at any time by emailing <a href="mailto:strategicedge.ai@gmail.com" style="color:#5C9900;">strategicedge.ai@gmail.com</a>.</p>
+      </div>
+
+      <div class="modal__section">
+        <div class="modal__section-heading">Who we share your data with</div>
+        <p>We use GoHighLevel, Stripe, and booking tools to operate our business. We do not sell your data.</p>
+      </div>
+
+      <div class="modal__section">
+        <div class="modal__section-heading">How long we keep it</div>
+        <p>2 years from last contact. 6 years if you become a client.</p>
+      </div>
+
+      <div class="modal__section">
+        <div class="modal__section-heading">Your rights</div>
+        <p>Access, correct, or delete your data at any time. Email <a href="mailto:strategicedge.ai@gmail.com" style="color:#5C9900;">strategicedge.ai@gmail.com</a>. Complaints to <a href="https://ico.org.uk" target="_blank" rel="noopener" style="color:#5C9900;">ico.org.uk</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+  <script>
+    // ===== HAMBURGER MENU =====
+    (function () {
+      var hamburger = document.getElementById('hamburger');
+      var mobileMenu = document.getElementById('mobileMenu');
+
+      hamburger.addEventListener('click', function () {
+        var isOpen = mobileMenu.classList.toggle('is-open');
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      // Close menu when a link inside it is clicked
+      mobileMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          mobileMenu.classList.remove('is-open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+
+    // ===== PRIVACY MODAL =====
+    (function () {
+      var privacyBtn = document.getElementById('privacyBtn');
+      var modal = document.getElementById('privacyModal');
+      var modalClose = document.getElementById('modalClose');
+      var modalBox = document.getElementById('modalBox');
+
+      function openModal() {
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      privacyBtn.addEventListener('click', openModal);
+      modalClose.addEventListener('click', closeModal);
+
+      // Close on overlay click (but not on modal box click)
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      });
+    })();
+
+    // ===== SLIDER LIVE UPDATE =====
+    (function () {
+      var slider = document.getElementById('missRate');
+      var label = document.getElementById('missRateLabel');
+
+      slider.addEventListener('input', function () {
+        label.textContent = slider.value + '%';
+      });
+    })();
+
+    // ===== DIAGNOSTIC CALCULATOR =====
+    (function () {
+      var calcBtn = document.getElementById('calcBtn');
+      var calcError = document.getElementById('calcError');
+      var calcResult = document.getElementById('calcResult');
+      var resultMonthly = document.getElementById('resultMonthly');
+      var resultAnnual = document.getElementById('resultAnnual');
+      var resultROI = document.getElementById('resultROI');
+
+      function formatNumber(n) {
+        return n.toLocaleString('en-GB', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+      }
+
+      calcBtn.addEventListener('click', function () {
+        var calls = parseFloat(document.getElementById('callsPerMonth').value);
+        var missRate = parseFloat(document.getElementById('missRate').value);
+        var jobValue = parseFloat(document.getElementById('jobValue').value);
+
+        // Hide previous states
+        calcError.classList.remove('is-visible');
+        calcResult.classList.remove('is-visible');
+
+        // Validation
+        if (isNaN(calls) || isNaN(jobValue) || calls === '' || jobValue === '') {
+          calcError.classList.add('is-visible');
+          return;
+        }
+
+        if (calls <= 0 || jobValue <= 0) {
+          calcError.classList.add('is-visible');
+          return;
+        }
+
+        // Formula
+        var monthly = (calls * (missRate / 100)) * jobValue;
+        var annual = monthly * 12;
+        var multiplier = (monthly / 450).toFixed(1);
+
+        if (monthly === 0) {
+          calcError.classList.add('is-visible');
+          return;
+        }
+
+        // Populate results
+        resultMonthly.innerHTML = '<span>£' + formatNumber(monthly) + '</span>';
+        resultAnnual.textContent = '£' + formatNumber(annual) + ' lost per year';
+        resultROI.textContent = 'Your Tier 1 retainer is £450/month — this system pays for itself ' + multiplier + 'x over every month';
+
+        // Show with animation
+        calcResult.classList.add('is-visible');
+
+        // Scroll into view on mobile
+        setTimeout(function () {
+          calcResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 50);
+
+        // Smooth scroll to result
+        calcResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    })();
+  </script>
+</body>
+</html>
